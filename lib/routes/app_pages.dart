@@ -1,5 +1,6 @@
 import 'package:devsload/screen/Auth/Login/view/LoginScreen.dart';
 import 'package:devsload/screen/Auth/Register/view/RegisterScreen.dart';
+import 'package:devsload/screen/Chat/view/ChatRoomScreen.dart';
 import 'package:devsload/screen/Layout/controller/bottomNavController.dart';
 import 'package:devsload/screen/Layout/view/AppLayout.dart';
 import 'package:get/get.dart';
@@ -27,6 +28,10 @@ class AppPages {
           BottomNaviController(),
         ),
       ),
+    ),
+    GetPage(
+      name: "${_Paths.CHATROOM}/:id",
+      page: () => ChatRoomScreen(),
     ),
   ];
 }

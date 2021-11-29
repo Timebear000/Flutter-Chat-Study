@@ -1,6 +1,8 @@
+import 'package:devsload/routes/app_pages.dart';
 import 'package:devsload/styles/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
 class ChatListScreen extends StatelessWidget {
   List<String> image_list = [
@@ -30,99 +32,121 @@ class ChatListScreen extends StatelessWidget {
         child: ListView.builder(
           shrinkWrap: true,
           itemBuilder: (_, index) {
-            return Container(
-              padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.w),
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: AppColor.BackGroundColor,
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.grey.withOpacity(0.2),
-                    spreadRadius: 5,
-                    blurRadius: 7,
-                    offset: Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
+            return GestureDetector(
+              onTap: () {
+                Get.toNamed("${Routes.CHATROOM}/1342");
+              },
               child: Container(
-                height: 62.w,
-                child: Row(
-                  children: [
-                    Container(
-                      width: 50.w,
-                      height: 50.w,
-                      child: Stack(
-                        children: [
-                          Container(width: 50.w, height: 50.w),
-                          ...Profile_ListItem(
-                                  itemCount: index, image_list: image_list)
-                              .toList(),
-                        ],
-                      ),
+                padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.w),
+                width: double.infinity,
+                decoration: BoxDecoration(
+                  color: AppColor.BackGroundColor,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.withOpacity(0.2),
+                      spreadRadius: 5,
+                      blurRadius: 7,
+                      offset: Offset(0, 3), // changes position of shadow
                     ),
-                    SizedBox(width: 10.w),
-                    Expanded(
-                      child: Container(
+                  ],
+                ),
+                child: Container(
+                  height: 62.w,
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 50.w,
                         height: 50.w,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          mainAxisSize: MainAxisSize.min,
-                          crossAxisAlignment: CrossAxisAlignment.start,
+                        child: Stack(
                           children: [
-                            Container(
-                              // width: double.infinity,
-                              child: Text(
-                                '개발자 채팅앱 개발',
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 13.sp,
-                                  color: Colors.black87,
+                            Container(width: 50.w, height: 50.w),
+                            ...Profile_ListItem(
+                                    itemCount: index, image_list: image_list)
+                                .toList(),
+                          ],
+                        ),
+                      ),
+                      SizedBox(width: 10.w),
+                      Expanded(
+                        child: Container(
+                          height: 50.w,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Container(
+                                // width: double.infinity,
+                                child: Text(
+                                  '개발자 채팅앱 개발',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 13.sp,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                alignment: Alignment.centerLeft,
+                              ),
+                              SizedBox(height: 2.w),
+                              Container(
+                                child: Text(
+                                  "이제 다들 주무시고 내일 아침\n 다시 화이팅 해 현재시간 04시 44분입니다",
+                                  maxLines: 2,
+                                  overflow: TextOverflow.ellipsis,
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w400,
+                                    fontSize: 12.sp,
+                                    color: Colors.grey[500],
+                                  ),
                                 ),
                               ),
-                              alignment: Alignment.centerLeft,
-                            ),
-                            SizedBox(height: 2.w),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 10.w),
+                      Container(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            index == 0
+                                ? Container(
+                                    child: Text('오전 11시 32분',
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey[400],
+                                        )))
+                                : Container(
+                                    child: Text('11월 12일',
+                                        style: TextStyle(
+                                          fontSize: 10.sp,
+                                          fontWeight: FontWeight.bold,
+                                          color: Colors.grey[400],
+                                        ))),
+                            SizedBox(height: 3.w),
                             Container(
+                              padding: EdgeInsets.symmetric(
+                                  horizontal: 3.w, vertical: 1.5.w),
+                              decoration: BoxDecoration(
+                                color: Colors.deepPurple[600],
+                                borderRadius: BorderRadius.circular(10.w),
+                              ),
                               child: Text(
-                                "이제 다들 주무시고 내일 아침\n 다시 화이팅 해 현재시간 04시 44분입니다",
-                                maxLines: 2,
-                                overflow: TextOverflow.ellipsis,
+                                '132',
                                 style: TextStyle(
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 12.sp,
-                                  color: Colors.grey[500],
+                                  fontSize: 8.sp,
+                                  fontWeight: FontWeight.w500,
+                                  color: Colors.white,
                                 ),
                               ),
                             ),
                           ],
                         ),
                       ),
-                    ),
-                    SizedBox(width: 10.w),
-                    Container(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          index == 0
-                              ? Container(
-                                  child: Text('오전 11시 32분',
-                                      style: TextStyle(
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey[400],
-                                      )))
-                              : Container(
-                                  child: Text('11월 12일',
-                                      style: TextStyle(
-                                        fontSize: 10.sp,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.grey[400],
-                                      ))),
-                        ],
-                      ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             );
@@ -246,10 +270,10 @@ class ChatListScreen extends StatelessWidget {
           bottom: 3.5,
           right: 3.5,
           child: CircleAvatar(
-            radius: 10.w,
+            radius: 12.w,
             backgroundColor: Colors.white,
             child: CircleAvatar(
-              radius: 9.w,
+              radius: 10.w,
               backgroundImage: NetworkImage(image_list[0]),
             ),
           ),

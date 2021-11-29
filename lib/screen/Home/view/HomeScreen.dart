@@ -159,153 +159,7 @@ class HomeScreen extends StatelessWidget {
                   SizedBox(height: 10.w),
                   ProjectCardTemp(page_controller: page_controller_1),
                   SizedBox(height: 20.w),
-                  _HeaderTitle(title: "현재 종료된 프로젝트", More: "더보기"),
-                  SizedBox(height: 10.w),
-                  // ProjectCard(page_controller: page_controller)
-
-                  Container(
-                    child: Column(
-                      children: [
-                        Container(
-                            height: 180.w,
-                            child: PageView.builder(
-                              controller: page_controller_2,
-                              itemBuilder: (_, index) {
-                                return Container(
-                                    color: Colors.transparent,
-                                    padding: EdgeInsets.symmetric(
-                                        horizontal: 20.w, vertical: 10.w),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                      padding: EdgeInsets.all(10.w),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(15.w),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.2),
-                                            spreadRadius: 5,
-                                            blurRadius: 7,
-                                            offset: Offset(0,
-                                                3), // changes position of shadow
-                                          ),
-                                        ],
-                                      ),
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          _ProjectTitle(
-                                            projectName: "개발자 채팅앱 리스트",
-                                            developerCount: '100',
-                                            owner_image: image_list[1],
-                                          ),
-                                          SizedBox(height: 10.w),
-                                          Container(
-                                            height: 48.h,
-                                            child: Text(
-                                              "멀티채팅방 구현이 목적입니다. ㅎㅎ",
-                                              maxLines: 3,
-                                              overflow: TextOverflow.ellipsis,
-                                              style: TextStyle(
-                                                fontSize: 13.sp,
-                                                color: Colors.grey[400],
-                                                height: 1.3,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ),
-                                          SizedBox(height: 10.w),
-                                          Container(
-                                            padding: EdgeInsets.symmetric(
-                                                horizontal: 10.w),
-                                            child: Column(
-                                              children: [
-                                                Row(
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceBetween,
-                                                  children: [
-                                                    Text('2021.01.11',
-                                                        style: TextStyle(
-                                                          fontSize: 8.sp,
-                                                          fontWeight:
-                                                              FontWeight.w200,
-                                                        )),
-                                                    Text('총 66 과정',
-                                                        style: TextStyle(
-                                                          fontSize: 8.sp,
-                                                          fontWeight:
-                                                              FontWeight.w200,
-                                                        )),
-                                                    Text('2021.12.13',
-                                                        style: TextStyle(
-                                                          fontSize: 8.sp,
-                                                          fontWeight:
-                                                              FontWeight.w200,
-                                                        )),
-                                                  ],
-                                                ),
-                                                SizedBox(height: 3.w),
-                                                Padding(
-                                                  padding: EdgeInsets.symmetric(
-                                                      horizontal: 2.w),
-                                                  child: Container(
-                                                    height: 3.w,
-                                                    decoration: BoxDecoration(
-                                                        color:
-                                                            Colors.orangeAccent,
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .horizontal(
-                                                          left: Radius.circular(
-                                                              3.w),
-                                                          right:
-                                                              Radius.circular(
-                                                                  3.w),
-                                                        )),
-                                                    width: double.infinity,
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ));
-                              },
-                              itemCount: 5,
-                            )),
-                        SizedBox(height: 10.w),
-                        Container(
-                          padding: EdgeInsets.symmetric(horizontal: 20.w),
-                          alignment: Alignment.centerRight,
-                          child: SmoothPageIndicator(
-                            controller: page_controller_2,
-                            count: 5,
-                            effect: ScrollingDotsEffect(
-                              spacing: 8.0,
-                              radius: 8.0,
-                              dotWidth: 8.0,
-                              dotHeight: 8.0,
-                              paintStyle: PaintingStyle.fill,
-                              strokeWidth: 1.5,
-                              dotColor: Colors.grey,
-                              activeDotColor: Colors.indigo,
-                            ),
-                            onDotClicked: (index) {},
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  SizedBox(height: 20.w),
-                  _HeaderTitle(title: "관심 프로젝트", More: "더보기"),
+                  _HeaderTitle(title: "추천 프로젝트", More: "더보기"),
                   SizedBox(height: 10.w),
                   Container(
                     child: Column(
@@ -413,6 +267,100 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20.w),
+                  _HeaderTitle(title: "현재 종료된 프로젝트", More: "더보기"),
+                  SizedBox(height: 10.w),
+                  // ProjectCard(page_controller: page_controller)
+
+                  Container(
+                    child: Column(
+                      children: [
+                        Container(
+                            height: 80.w,
+                            child: PageView.builder(
+                              controller: page_controller_2,
+                              itemBuilder: (_, index) {
+                                return Container(
+                                    color: Colors.transparent,
+                                    padding: EdgeInsets.symmetric(
+                                        horizontal: 20.w, vertical: 10.w),
+                                    child: Container(
+                                      width: double.infinity,
+                                      height: double.infinity,
+                                      padding: EdgeInsets.all(10.w),
+                                      decoration: BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius:
+                                            BorderRadius.circular(15.w),
+                                        boxShadow: [
+                                          BoxShadow(
+                                            color: Colors.grey.withOpacity(0.2),
+                                            spreadRadius: 5,
+                                            blurRadius: 7,
+                                            offset: Offset(0,
+                                                3), // changes position of shadow
+                                          ),
+                                        ],
+                                      ),
+                                      child: Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.start,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.center,
+                                        children: [
+                                          CircleAvatar(
+                                            radius: 15.w,
+                                            backgroundColor: Colors.purple,
+                                            child: CircleAvatar(
+                                              radius: 14.w,
+                                              backgroundImage:
+                                                  NetworkImage(image_list[0]),
+                                            ),
+                                          ),
+                                          SizedBox(width: 5.w),
+                                          Text(
+                                            "개발자 채팅 앱 제작 ",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              color: Colors.black54,
+                                              fontSize: 13.sp,
+                                            ),
+                                          ),
+                                          Expanded(child: Container()),
+                                          Text('2021년 11월 13일',
+                                              style: TextStyle(
+                                                color: Colors.grey[400],
+                                                fontSize: 11.sp,
+                                              )),
+                                        ],
+                                      ),
+                                    ));
+                              },
+                              itemCount: 5,
+                            )),
+                        SizedBox(height: 10.w),
+                        Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20.w),
+                          alignment: Alignment.centerRight,
+                          child: SmoothPageIndicator(
+                            controller: page_controller_2,
+                            count: 5,
+                            effect: ScrollingDotsEffect(
+                              spacing: 8.0,
+                              radius: 8.0,
+                              dotWidth: 8.0,
+                              dotHeight: 8.0,
+                              paintStyle: PaintingStyle.fill,
+                              strokeWidth: 1.5,
+                              dotColor: Colors.grey,
+                              activeDotColor: Colors.indigo,
+                            ),
+                            onDotClicked: (index) {},
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 20.w),
                 ],
               ),
             ),
@@ -455,33 +403,55 @@ class HomeScreen extends StatelessWidget {
         Expanded(child: Container()),
         Container(
           child: Stack(
-            children: List.generate(
-              3,
-              (index) => index == 0
-                  ? Container(
-                      width: 90.w,
-                      child: CircleAvatar(
-                        radius: 15.w,
-                        backgroundColor: Colors.pink,
+            children: [
+              ...List.generate(
+                3,
+                (index) => index == 0
+                    ? Container(
+                        width: 130.w,
                         child: CircleAvatar(
-                          radius: 14.w,
-                          backgroundImage: NetworkImage(image_list[index + 1]),
+                          radius: 15.w,
+                          backgroundColor: Colors.pink,
+                          child: CircleAvatar(
+                            radius: 14.w,
+                            backgroundImage:
+                                NetworkImage(image_list[index + 1]),
+                          ),
                         ),
+                      )
+                    : Positioned(
+                        left: 15.w * index,
+                        right: -15.w * index,
+                        child: CircleAvatar(
+                          radius: 15.w,
+                          backgroundColor: Colors.pink,
+                          child: CircleAvatar(
+                            radius: 14.w,
+                            backgroundImage:
+                                NetworkImage(image_list[index + 1]),
+                          ),
+                        ),
+                      ),
+              ).toList(),
+              Positioned(
+                bottom: 0,
+                right: 0,
+                child: Row(
+                  children: [
+                    CircleAvatar(
+                      radius: 5.w,
+                      backgroundColor: Colors.greenAccent[400],
+                    ),
+                    Text(
+                      '+100',
+                      style: TextStyle(
+                        fontSize: 8.sp,
                       ),
                     )
-                  : Positioned(
-                      left: 15.w * index,
-                      right: -15.w * index,
-                      child: CircleAvatar(
-                        radius: 15.w,
-                        backgroundColor: Colors.pink,
-                        child: CircleAvatar(
-                          radius: 14.w,
-                          backgroundImage: NetworkImage(image_list[index + 1]),
-                        ),
-                      ),
-                    ),
-            ),
+                  ],
+                ),
+              ),
+            ],
           ),
         ),
       ],
