@@ -7,6 +7,8 @@ abstract class Routes {
   static const Register = _Paths.Register;
   static const APP = _Paths.APP;
   static const CHATROOM = _Paths.CHATROOM;
+  static const PROJECT = _Paths.PROJECT;
+  static const PROJECT_DETAIL = _Paths.PROJECT_DETAIL;
 }
 
 abstract class _Paths {
@@ -15,4 +17,6 @@ abstract class _Paths {
   static const Register = '/register';
   static const APP = "/main";
   static const CHATROOM = "/chat";
+  static const PROJECT = "/project";
+  static const PROJECT_DETAIL = "/project/detail";
 }

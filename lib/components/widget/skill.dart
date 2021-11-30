@@ -6,12 +6,15 @@ class Skill extends StatelessWidget {
   final EdgeInsets? padding;
   final EdgeInsets? magin;
   final String skill;
+  final TextStyle? style;
 
-  const Skill({this.color, this.padding, this.magin, required this.skill});
+  const Skill(
+      {this.color, this.padding, this.magin, required this.skill, this.style});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: magin ?? null,
       padding: padding ?? EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.w),
       decoration: BoxDecoration(
         color: color ?? Colors.grey,
@@ -19,11 +22,12 @@ class Skill extends StatelessWidget {
       ),
       child: Text(
         skill,
-        style: TextStyle(
-          color: Colors.white,
-          fontWeight: FontWeight.w500,
-          fontSize: 14.sp,
-        ),
+        style: style ??
+            TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.w500,
+              fontSize: 14.sp,
+            ),
       ),
     );
   }

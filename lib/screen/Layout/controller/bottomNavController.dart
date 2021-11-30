@@ -1,5 +1,6 @@
 import 'package:devsload/screen/Chat/view/ChatListScreen.dart';
 import 'package:devsload/screen/Home/view/HomeScreen.dart';
+import 'package:devsload/screen/Project/view/ProjectScreen.dart';
 import 'package:devsload/styles/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,9 +15,7 @@ class BottomNaviController extends GetxController {
   List<Widget> body_list = [
     HomeScreen(),
     ChatListScreen(),
-    Scaffold(
-      backgroundColor: AppColor.BackGroundColor,
-    ),
+    ProjectScreen(),
     Scaffold(
       backgroundColor: AppColor.BackGroundColor,
     ),
