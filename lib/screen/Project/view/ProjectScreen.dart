@@ -34,7 +34,7 @@ class ProjectScreen extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10.w),
-                          color: Colors.blue[100],
+                          color: Colors.white,
                           boxShadow: [
                             BoxShadow(
                               color: Colors.grey.withOpacity(0.2),
