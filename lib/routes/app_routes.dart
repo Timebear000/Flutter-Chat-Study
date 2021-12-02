@@ -9,6 +9,7 @@ abstract class Routes {
   static const CHATROOM = _Paths.CHATROOM;
   static const PROJECT = _Paths.PROJECT;
   static const PROJECT_DETAIL = _Paths.PROJECT_DETAIL;
+  static const PROJECT_END = _Paths.PROJECT_END;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const CHATROOM = "/chat";
   static const PROJECT = "/project";
   static const PROJECT_DETAIL = "/project/detail";
+  static const PROJECT_END = "/project/end";
 }

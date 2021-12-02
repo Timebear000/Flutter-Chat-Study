@@ -1,7 +1,9 @@
 import 'package:devsload/components/widget/skill.dart';
+import 'package:devsload/routes/app_pages.dart';
 import 'package:devsload/styles/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -283,55 +285,63 @@ class HomeScreen extends StatelessWidget {
                                     color: Colors.transparent,
                                     padding: EdgeInsets.symmetric(
                                         horizontal: 20.w, vertical: 10.w),
-                                    child: Container(
-                                      width: double.infinity,
-                                      height: double.infinity,
-                                      padding: EdgeInsets.all(10.w),
-                                      decoration: BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius:
-                                            BorderRadius.circular(15.w),
-                                        boxShadow: [
-                                          BoxShadow(
-                                            color: Colors.grey.withOpacity(0.2),
-                                            spreadRadius: 5,
-                                            blurRadius: 7,
-                                            offset: Offset(0,
-                                                3), // changes position of shadow
-                                          ),
-                                        ],
-                                      ),
-                                      child: Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          CircleAvatar(
-                                            radius: 15.w,
-                                            backgroundColor: Colors.purple,
-                                            child: CircleAvatar(
-                                              radius: 14.w,
-                                              backgroundImage:
-                                                  NetworkImage(image_list[0]),
+                                    child: GestureDetector(
+                                      behavior: HitTestBehavior.translucent,
+                                      onTap: () {
+                                        Get.toNamed(
+                                            "${Routes.PROJECT_END}/1234");
+                                      },
+                                      child: Container(
+                                        width: double.infinity,
+                                        height: double.infinity,
+                                        padding: EdgeInsets.all(10.w),
+                                        decoration: BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius:
+                                              BorderRadius.circular(15.w),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color:
+                                                  Colors.grey.withOpacity(0.2),
+                                              spreadRadius: 5,
+                                              blurRadius: 7,
+                                              offset: Offset(0,
+                                                  3), // changes position of shadow
                                             ),
-                                          ),
-                                          SizedBox(width: 5.w),
-                                          Text(
-                                            "개발자 채팅 앱 제작 ",
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black54,
-                                              fontSize: 13.sp,
+                                          ],
+                                        ),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            CircleAvatar(
+                                              radius: 15.w,
+                                              backgroundColor: Colors.purple,
+                                              child: CircleAvatar(
+                                                radius: 14.w,
+                                                backgroundImage:
+                                                    NetworkImage(image_list[0]),
+                                              ),
                                             ),
-                                          ),
-                                          Expanded(child: Container()),
-                                          Text('2021년 11월 13일',
+                                            SizedBox(width: 5.w),
+                                            Text(
+                                              "개발자 채팅 앱 제작 ",
                                               style: TextStyle(
-                                                color: Colors.grey[400],
-                                                fontSize: 11.sp,
-                                              )),
-                                        ],
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.black54,
+                                                fontSize: 13.sp,
+                                              ),
+                                            ),
+                                            Expanded(child: Container()),
+                                            Text('2021년 11월 13일',
+                                                style: TextStyle(
+                                                  color: Colors.grey[400],
+                                                  fontSize: 11.sp,
+                                                )),
+                                          ],
+                                        ),
                                       ),
                                     ));
                               },

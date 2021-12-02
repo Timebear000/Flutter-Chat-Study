@@ -3,7 +3,8 @@ import 'package:devsload/screen/Auth/Register/view/RegisterScreen.dart';
 import 'package:devsload/screen/Chat/view/ChatRoomScreen.dart';
 import 'package:devsload/screen/Layout/controller/bottomNavController.dart';
 import 'package:devsload/screen/Layout/view/AppLayout.dart';
-import 'package:devsload/screen/Project/view/ProjectDetail.dart';
+import 'package:devsload/screen/Project/view/ProjectDetailScreen.dart';
+import 'package:devsload/screen/Project/view/ProjectEndScreen.dart';
 import 'package:devsload/screen/Project/view/ProjectScreen.dart';
 import 'package:get/get.dart';
 
@@ -39,6 +40,10 @@ class AppPages {
     GetPage(
       name: "${_Paths.PROJECT_DETAIL}/:id",
       page: () => ProjectDetailScreen(),
+    ),
+    GetPage(
+      name: "${_Paths.PROJECT_END}/:id",
+      page: () => ProjectEndScreen(),
     ),
   ];
 }
