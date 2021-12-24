@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "949985344612",
+    "project_id": "dev-load",
+    "storage_bucket": "dev-load.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:949985344612:android:9689f6c0c3f080df463371",
+        "android_client_info": {
+          "package_name": "kr.timebear.devsload"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "949985344612-cfveal6q60pbnr0ac4mr45hingvqsahu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGoHP8lUxgJOTnCxar7PjWta1aPIOwLLI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "949985344612-cfveal6q60pbnr0ac4mr45hingvqsahu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
