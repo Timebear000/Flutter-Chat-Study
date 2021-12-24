@@ -1,10 +1,12 @@
+import 'package:devsload/components/modals/CustomAlertModal.dart';
 import 'package:devsload/routes/app_pages.dart';
+import 'package:devsload/screen/Auth/Login/controller/LoginController.dart';
 import 'package:devsload/styles/icons.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends GetView<LoginController> {
   const LoginScreen({Key? key}) : super(key: key);
 
   @override
@@ -79,8 +81,8 @@ class LoginScreen extends StatelessWidget {
                   background: Colors.black,
                   icon: ICON_AUTH["apple"]!,
                   text: 'Sign in with Apple',
-                  onTap: () {
-                    Get.toNamed(Routes.Register);
+                  onTap: () async {
+                    await controller.appleLogin();
                   },
                   textColor: Colors.white,
                 ),

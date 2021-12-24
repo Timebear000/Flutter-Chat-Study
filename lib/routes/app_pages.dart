@@ -1,3 +1,4 @@
+import 'package:devsload/screen/Auth/Login/controller/LoginController.dart';
 import 'package:devsload/screen/Auth/Login/view/LoginScreen.dart';
 import 'package:devsload/screen/Auth/Register/view/RegisterScreen.dart';
 import 'package:devsload/screen/Chat/view/ChatRoomScreen.dart';
@@ -18,6 +19,11 @@ class AppPages {
     GetPage(
       name: _Paths.LOGIN,
       page: () => LoginScreen(),
+      binding: BindingsBuilder(
+        () => Get.put<LoginController>(
+          LoginController(),
+        ),
+      ),
     ),
     GetPage(
       name: _Paths.Register,

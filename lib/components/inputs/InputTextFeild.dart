@@ -16,7 +16,7 @@ class InputTextField extends StatelessWidget {
       padding: padding ?? EdgeInsets.symmetric(horizontal: 20.w, vertical: 5.w),
       width: double.infinity,
       decoration: BoxDecoration(
-        color: AppColor.LightMainColor,
+        color: Colors.white,
         borderRadius: BorderRadius.circular(20.w),
       ),
       child: child,

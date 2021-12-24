@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:devsload/components/buttons/ModalButton.dart';
 import 'package:devsload/components/inputs/InputTextFeild.dart';
 import 'package:devsload/components/widget/skill.dart';
 import 'package:devsload/screen/Auth/Register/view/RegisterSuccessScreen.dart';
@@ -46,7 +47,7 @@ class RegisterScreen extends StatelessWidget {
         child: Container(
           width: double.infinity,
           height: double.infinity,
-          color: Colors.white,
+          color: AppColor.mainColor.withOpacity(0.1),
           child: SingleChildScrollView(
             physics: ClampingScrollPhysics(),
             child: Padding(
@@ -61,10 +62,10 @@ class RegisterScreen extends StatelessWidget {
                     alignment: Alignment.center,
                     child: CircleAvatar(
                       backgroundColor: AppColor.mainColor,
-                      radius: 85.w,
+                      radius: 45.w,
                       child: CircleAvatar(
                         backgroundColor: Colors.orangeAccent,
-                        radius: 80.w,
+                        radius: 40.w,
                       ),
                     ),
                   ),
@@ -95,23 +96,13 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 10.h),
-                  Container(
-                    margin: EdgeInsets.only(left: 10.w),
-                    child: Text(
-                      'MySelf',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 17.sp,
-                      ),
-                    ),
-                  ),
                   InputTextField(
                     child: TextField(
                       keyboardType: TextInputType.multiline,
                       maxLength: 1000,
                       maxLines: 5,
                       decoration: InputDecoration(
-                        hintText: "myself",
+                        hintText: "자기 소개글을 적어주세요.",
                         border: InputBorder.none,
                       ),
                     ),
@@ -188,31 +179,31 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20.h),
                   Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10.w),
-                      color: AppColor.mainColor,
-                    ),
-                    child: ElevatedButton(
-                      onPressed: () async {
-// Get.toNamed("/register")
-                        Get.to(RegisterSuccessScreen());
-                      },
-                      style: ElevatedButton.styleFrom(
-                        primary: Colors.transparent,
-                        textStyle: TextStyle(
-                          color: Colors.white,
-                          fontSize: 18.sp,
-                          fontWeight: FontWeight.w500,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10.w),
+                        gradient: LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            AppColor.GradientColorStart,
+                            AppColor.GradientColorEnd,
+                          ],
                         ),
-                        padding: EdgeInsets.symmetric(vertical: 15.w),
-                        shape: RoundedRectangleBorder(
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(10.w))),
                       ),
-                      child: Text("Register"),
-                    ),
-                  ),
+                      child: ModalButton(
+                          onClick: () {
+                            Get.to(RegisterSuccessScreen());
+                          },
+                          color: Colors.blue,
+                          text: Text(
+                            "회원가입",
+                            style: TextStyle(
+                              fontSize: 16.sp,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ))),
                 ],
               ),
             ),
