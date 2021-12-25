@@ -11,3 +11,11 @@ class AppColor {
   static Color GradientColorStart = Color(0xFFA1CBE7);
   static Color GradientColorEnd = Color(0xFF4B89DC);
 }
+
+Map<String, Color> SkillColor = {
+  "C": Colors.blue,
+  "Flutter": Colors.blueAccent,
+  "Dart": Colors.blueGrey,
+  "C++": Colors.green,
+  "C#": Colors.greenAccent,
+};

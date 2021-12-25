@@ -22,7 +22,7 @@ class UserRepository extends GetConnect {
     super.onInit();
   }
 
-  Future<bool> profileUpload({required XFile image}) async {
+  Future<String> profileUpload({required XFile image}) async {
     String file_upload_url = "${dotenv.env["API"]}/users/profile/upload";
     String header_x_auth = dotenv.env["x_auth"]!;
     String filename = image.name.toString().toLowerCase();
@@ -38,5 +38,13 @@ class UserRepository extends GetConnect {
       throw new Exception(response.data["message"]);
     }
     return response.data["data"];
+  }
+
+  Future<bool> nickNameCheck({required String nickName}) async {
+    var response = await get("/nickNameCheck/${nickName}");
+    if (response.hasError) {
+      throw new Exception(response.body["message"]);
+    }
+    return response.body["data"];
   }
 }

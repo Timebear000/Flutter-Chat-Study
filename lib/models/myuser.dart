@@ -17,6 +17,7 @@ class MyUser {
     required this.hide,
     required this.deviceToken,
     required this.skills,
+    required this.codingYear,
   });
 
   String uid;
@@ -25,9 +26,10 @@ class MyUser {
   String introduce;
   String profile;
   bool push;
+  int codingYear;
   bool hide;
   String deviceToken;
-  List<Skill> skills;
+  List<SkillModel> skills;
 
   MyUser copyWith({
     String? uid,
@@ -37,8 +39,9 @@ class MyUser {
     String? profile,
     bool? push,
     bool? hide,
+    int? codingYear,
     String? deviceToken,
-    List<Skill>? skills,
+    List<SkillModel>? skills,
   }) =>
       MyUser(
         uid: uid ?? this.uid,
@@ -50,6 +53,7 @@ class MyUser {
         hide: hide ?? this.hide,
         deviceToken: deviceToken ?? this.deviceToken,
         skills: skills ?? this.skills,
+        codingYear: codingYear ?? this.codingYear,
       );
 
   factory MyUser.fromJson(Map<String, dynamic> json) => MyUser(
@@ -64,7 +68,9 @@ class MyUser {
             json["_device_token"] == null ? null : json["_device_token"],
         skills: json["skills"] == null
             ? []
-            : List<Skill>.from(json["skills"].map((x) => Skill.fromJson(x))),
+            : List<SkillModel>.from(
+                json["skills"].map((x) => SkillModel.fromJson(x))),
+        codingYear: json["coding_year"] == null ? null : json["coding_year"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -78,6 +84,7 @@ class MyUser {
         "_device_token": deviceToken == null ? null : deviceToken,
         "skills": skills == null
             ? []
-            : List<dynamic>.from(skills.map((x) => x.toJson())),
+            : List<SkillModel>.from(skills.map((x) => x.toJson())),
+        "coding_year": codingYear == null ? null : codingYear,
       };
 }

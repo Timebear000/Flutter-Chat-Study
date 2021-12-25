@@ -1,8 +1,10 @@
 import 'dart:async';
 
+import 'package:devsload/components/modals/CustomAlertModal.dart';
 import 'package:devsload/models/myuser.dart';
 import 'package:devsload/repositorys/AuthRepository.dart';
 import 'package:devsload/services/AppPushService.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -61,7 +63,35 @@ class AppAuthService extends GetxService {
   Future<String> appleAuth(AuthorizationCredentialAppleID credential) async {
     return await AppAuthRepository.to.appleLogin(credential);
   }
+
   // Google Auth
+  Future<String> googleAuth({required String token}) async {
+    return await AppAuthRepository.to.googleLogin(google_id: token);
+  }
+
+  Future<bool> userRegister(
+      {required String email,
+      required String type,
+      required String nickName,
+      required String profile,
+      required List<String> skills,
+      required String introduce,
+      required int start_coding,
+      required String device_token}) async {
+    var response = await AppAuthRepository.to.Register(
+        email: email,
+        type: type,
+        nickName: nickName,
+        profile: profile,
+        skills: skills,
+        introduce: introduce,
+        start_coding: start_coding,
+        device_token: device_token);
+    print(response.toString());
+    this.user = MyUser.fromJson(response['user']);
+    setToken(response['token']);
+    return true;
+  }
   // Getter
 
 }

@@ -1,5 +1,6 @@
 import 'package:devsload/components/widget/skill.dart';
 import 'package:devsload/routes/app_pages.dart';
+import 'package:devsload/services/AppAuthService.dart';
 import 'package:devsload/styles/Colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -82,13 +83,14 @@ class HomeScreen extends StatelessWidget {
                           child: CircleAvatar(
                             backgroundColor: Colors.white,
                             radius: 35.w,
-                            backgroundImage: NetworkImage(image_list[0]),
+                            backgroundImage:
+                                NetworkImage(AppAuthService.to.user.profile),
                           ),
                         ),
                         SizedBox(height: 10.w),
                         Container(
                           child: Text(
-                            '홍길동',
+                            AppAuthService.to.user.nickName,
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 17.sp,
@@ -99,7 +101,7 @@ class HomeScreen extends StatelessWidget {
                         SizedBox(height: 5.w),
                         Container(
                           child: Text(
-                            '2021년 1월 16일',
+                            "${AppAuthService.to.user.codingYear} 년차",
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 13.sp,

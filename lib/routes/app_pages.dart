@@ -1,5 +1,6 @@
 import 'package:devsload/screen/Auth/Login/controller/LoginController.dart';
 import 'package:devsload/screen/Auth/Login/view/LoginScreen.dart';
+import 'package:devsload/screen/Auth/Register/controller/RegisterController.dart';
 import 'package:devsload/screen/Auth/Register/view/RegisterScreen.dart';
 import 'package:devsload/screen/Chat/view/ChatRoomScreen.dart';
 import 'package:devsload/screen/Layout/controller/bottomNavController.dart';
@@ -28,6 +29,11 @@ class AppPages {
     GetPage(
       name: _Paths.Register,
       page: () => RegisterScreen(),
+      binding: BindingsBuilder(
+        () => Get.put<RegisterController>(
+          RegisterController(),
+        ),
+      ),
     ),
     GetPage(
       name: _Paths.APP,

@@ -71,8 +71,10 @@ class LoginScreen extends GetView<LoginController> {
                   background: Colors.white,
                   icon: ICON_AUTH["google"]!,
                   text: 'Sign in with Google',
-                  onTap: () {
-                    Get.toNamed(Routes.Register);
+                  onTap: () async {
+                    if (controller.click_on.value) {
+                      await controller.googleLogin();
+                    }
                   },
                   textColor: Colors.black87,
                 ),
@@ -82,7 +84,9 @@ class LoginScreen extends GetView<LoginController> {
                   icon: ICON_AUTH["apple"]!,
                   text: 'Sign in with Apple',
                   onTap: () async {
-                    await controller.appleLogin();
+                    if (controller.click_on.value) {
+                      await controller.appleLogin();
+                    }
                   },
                   textColor: Colors.white,
                 ),

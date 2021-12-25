@@ -15,7 +15,6 @@ class AppAuthRepository extends GetConnect {
 
   @override
   void onInit() {
-    print(dotenv.env.toString());
     httpClient.baseUrl = "${dotenv.env["API"]}/auth";
     // // 모든 요청의 헤더에 'X-Auth' 속성을 첨부합니다.
     httpClient.addRequestModifier((Request request) {
@@ -64,18 +63,18 @@ class AppAuthRepository extends GetConnect {
   }
 
   // Register User
-  Future<bool> Register(
+  Future<dynamic> Register(
       {required String email,
       required String type,
       required String nickName,
       required String profile,
-      required String skills,
+      required List<String> skills,
       required String introduce,
       required int start_coding,
       required String device_token}) async {
     var body = {
       "email": email,
-      "start_coding": start_coding,
+      "coding_start": start_coding,
       "type": type,
       "nickName": nickName,
       "profile": profile,
@@ -87,7 +86,10 @@ class AppAuthRepository extends GetConnect {
     if (response.hasError) {
       throw new Exception(response.body['message']);
     }
-    return true;
+    return {
+      'user': response.body['data']['user'],
+      'token': response.body['data']['token']
+    };
   }
 
   //  Apple Auth
@@ -107,6 +109,7 @@ class AppAuthRepository extends GetConnect {
   Future<String> googleLogin({required String google_id}) async {
     var response = await post('/google', {'token': google_id});
     if (response.hasError) {
+      print(response.body['message']);
       throw new Exception('구글과의 인증이 정상적으로 처리 되지 않았습니다.');
     }
     return response.body['data']['email'];
